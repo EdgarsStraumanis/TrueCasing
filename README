@@ -5,3 +5,13 @@ Last update: December the 5th 2019
 Credit goes to moses smt soluton - https://github.com/moses-smt/mosesdecoder
 Author: Edgars Straumanis
 -----------------------------<><><><><><><><><><><><><><><>-----------------------------
+
+perl truecase.perl --model truecase-model.true.lv < TestingData2.txt > fileStandart.txt
+perl truecaseUpgraded.perl --model truecase-model.true.lv < TestingData2.txt > fileUpgraded.txt
+
+cd <pathToYourFolder>\Truecasing
+
+perl lowercase.perl < TestingData2.txt > TestingDataLowercase.txt
+
+perl truecase.perl --model truecase-model.true.lv < TestingDataLowercase.txt > fileStandart.txt
+perl truecaseUpgraded.perl --model truecase-model.true.lv < TestingDataLowercase.txt > fileUpgraded.txt

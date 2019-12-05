@@ -6,12 +6,30 @@ Credit goes to moses smt soluton - https://github.com/moses-smt/mosesdecoder
 Author: Edgars Straumanis
 -----------------------------<><><><><><><><><><><><><><><>-----------------------------
 
+1. Clone the solution
+2. Have a moses command in cmd or perl ( like http://strawberryperl.com/ )
+3. Set it to folder where the commands will be run
+cd <pathToYourFolder>\Truecasing
+4. The solution is done in two ways normal input data (a) and lowercased data (b)
+---------------------------------
+Input a:
+        example of model is included as <truecase-model.true.lv>
+        testing data is <TestingData2.txt> while output is for moses ALWAYS <fileStandart.txt> and solution ALWAYS <fileUpgraded.txt> 
+
 perl truecase.perl --model truecase-model.true.lv < TestingData2.txt > fileStandart.txt
 perl truecaseUpgraded.perl --model truecase-model.true.lv < TestingData2.txt > fileUpgraded.txt
 
-cd <pathToYourFolder>\Truecasing
+5a. The result of solution can be run with command:
+perl comparefiles.pl
+
+---------------------------------
+Input b:
+        example of model is included as <truecase-model.true.lv>
+        testing data is <TestingDataLowercase.txt> while output is for moses ALWAYS <fileStandart.txt> and solution ALWAYS <fileUpgraded.txt> 
 
 perl lowercase.perl < TestingData2.txt > TestingDataLowercase.txt
-
 perl truecase.perl --model truecase-model.true.lv < TestingDataLowercase.txt > fileStandart.txt
 perl truecaseUpgraded.perl --model truecase-model.true.lv < TestingDataLowercase.txt > fileUpgraded.txt
+
+5b. The result of solution can be run with command:
+perl comparefiles.pl
